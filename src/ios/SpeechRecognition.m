@@ -132,7 +132,7 @@
 
 - (void) initAudioSession
 {
-    AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+    audioSession = [AVAudioSession sharedInstance];
     [audioSession setCategory:AVAudioSessionCategoryRecord error:nil];
     [audioSession setMode:AVAudioSessionModeMeasurement error:nil];
     [audioSession setActive:YES withOptions:AVAudioSessionSetActiveOptionNotifyOthersOnDeactivation error:nil];
@@ -203,6 +203,8 @@
         if (self.audioEngine.isRunning) {
             [self.audioEngine stop];
             [self.recognitionRequest endAudio];
+
+            [audioSession setActive:NO withOptions:AVAudioSessionSetActiveOptionNotifyOthersOnDeactivation error:nil];
         }
     } else {
         [self.iSpeechRecognition cancel];

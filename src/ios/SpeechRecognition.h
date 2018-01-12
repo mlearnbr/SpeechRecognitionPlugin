@@ -9,6 +9,7 @@
 @property (nonatomic, strong) ISSpeechRecognition* iSpeechRecognition;
 @property (nonatomic, strong) SFSpeechRecognizer *sfSpeechRecognizer;
 @property (nonatomic, strong) AVAudioEngine *audioEngine;
+@property (nonatomic, strong) AVAudioSession *audioSession;
 @property (nonatomic, strong) SFSpeechAudioBufferRecognitionRequest *recognitionRequest;
 @property (nonatomic, strong) SFSpeechRecognitionTask *recognitionTask;
 
